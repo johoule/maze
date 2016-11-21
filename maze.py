@@ -7,8 +7,8 @@ pygame.init()
 
 
 # Window
-WIDTH = 800
-HEIGHT = 600
+WIDTH = 1200
+HEIGHT = 900
 SIZE = (WIDTH, HEIGHT)
 TITLE = "Maze"
 screen = pygame.display.set_mode(SIZE)
@@ -25,6 +25,10 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 YELLOW = (255, 255, 0)
 GREEN = (0, 255, 0)
+NEON_BLUE = (2, 1, 253)
+
+#set stage
+stage = 1
 
 
 # Make a player
@@ -38,7 +42,11 @@ wall1 =  [300, 275, 200, 25]
 wall2 =  [400, 450, 200, 25]
 wall3 =  [100, 100, 25, 200]
 
+wall1_2 = [400, 275, 200, 25]
+
+
 walls = [wall1, wall2, wall3]
+
 
 # Make coins
 coin1 = [300, 500, 25, 25]
@@ -58,6 +66,9 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                stage += 1
 
     pressed = pygame.key.get_pressed()
 
@@ -120,19 +131,24 @@ while not done:
         
     # Drawing code (Describe the picture. It isn't actually drawn yet.)
     screen.fill(BLACK)
-
     pygame.draw.rect(screen, WHITE, player)
-    
-    for w in walls:
-        pygame.draw.rect(screen, RED, w)
 
-    for c in coins:
-        pygame.draw.rect(screen, YELLOW, c)
+    if stage == 1:
+        pygame.draw.rect(screen, NEON_BLUE, [100, 100, 1000, 700])
+    elif stage == 2:    
+        for w in walls:
+            pygame.draw.rect(screen, RED, w)
+
+        for c in coins:
+            pygame.draw.rect(screen, YELLOW, c)
         
-    if win:
-        font = pygame.font.Font(None, 48)
-        text = font.render("You Win!", 1, GREEN)
-        screen.blit(text, [400, 200])
+        if win:
+            font = pygame.font.Font(None, 48)
+            text = font.render("You Win!", 1, GREEN)
+            screen.blit(text, [400, 200])
+    elif stage == 3:
+        for w in walls:
+            pygame.draw.rect(screen, GREEN, w)
 
     
     # Update screen (Actually draw the picture in the window.)
