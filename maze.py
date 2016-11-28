@@ -27,34 +27,77 @@ YELLOW = (255, 255, 0)
 GREEN = (0, 255, 0)
 NEON_BLUE = (2, 1, 253)
 
+#font
+font = pygame.font.Font(None, 48)
+font2 = pygame.font.Font(None, 100)
+font3 = pygame.font.Font(None, 150)
+
+#images
+img = pygame.image.load('playerArrow.png')
+
 #set stage
-stage = 1
+stage = 2
 
 
 # Make a player
-player =  [200, 150, 25, 25]
+player =  [100, 75, 25, 25]
 player_vx = 0
 player_vy = 0
 player_speed = 5
 
-# make walls
-wall1 =  [300, 275, 200, 25]
-wall2 =  [400, 450, 200, 25]
-wall3 =  [100, 100, 25, 200]
+# make walls level 1
+wall1 =  [0, 415, 200, 25]
+wall2 =  [25, 25, 25, 315]
+wall3 =  [50, 315, 153, 25]
+wall4 =  [200, 315, 25, 125]
+wall5 =  [50, 25, 1125, 25]
+wall6 =  [1150, 25, 25, 315]
+wall7 =  [997, 315, 153, 25]
+wall8 =  [997, 315, 25, 125]
+wall9 =  [1000, 415, 200, 25]
+wall10 = [0, 485, 200, 25]
 
-wall1_2 = [400, 275, 200, 25]
+#walls level 2
 
 
-walls = [wall1, wall2, wall3]
+wall65 = [25, 25, 25, 25]
 
 
-# Make coins
-coin1 = [300, 500, 25, 25]
-coin2 = [400, 200, 25, 25]
-coin3 = [150, 150, 25, 25]
+walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10]
+walls_two = [wall65]
 
-coins = [coin1, coin2, coin3]
+# doors
+door1 = [600, 500, 25, 300]
 
+
+# Make coins level 1
+coin1 = [50, 50, 25, 25]
+coin2 = [300, 0, 25, 25]
+coin3 = [600, 0, 25, 25]
+coin4 = [900, 0, 25, 25]
+coin5 = [1175, 300, 25, 25]
+coin6 = [1175, 600, 25, 25]
+coin7 = [900, 875, 25, 25]
+coin8 = [600, 875, 25, 25]
+coin9 = [300, 875, 25, 25]
+coin10 = [0, 600, 25, 25]
+coin11 = [0, 300, 25, 25]
+
+# make coins level 2
+coin14 = [300, 0, 25, 25]
+coin15 = [400, 0, 25, 25]
+coin16 = [500, 0, 25, 25]
+
+coins_one = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10, coin11]
+coins_two = [coin14, coin15, coin16]
+
+#levels
+level2 = False
+level3 = False
+
+#doors
+door_stage2 = True
+ 
 
 # Game loop
 win = False
@@ -67,8 +110,9 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                stage += 1
+            if stage == 1:
+                if event.key == pygame.K_SPACE:
+                    stage += 1
 
     pressed = pygame.key.get_pressed()
 
@@ -97,36 +141,82 @@ while not done:
     player[0] += player_vx
 
     ''' resolve collisions horizontally '''
-    for w in walls:
-        if intersects.rect_rect(player, w):        
-            if player_vx > 0:
-                player[0] = w[0] - player[2]
-            elif player_vx < 0:
-                player[0] = w[0] + w[2]
+    if stage == 2:
+        for w in walls_one:
+            if intersects.rect_rect(player, w):        
+                if player_vx > 0:
+                    player[0] = w[0] - player[2]
+                elif player_vx < 0:
+                    player[0] = w[0] + w[2]
+
+    elif stage == 3:
+        for w in walls_two:
+            if intersects.rect_rect(player, w):        
+                if player_vx > 0:
+                    player[0] = w[0] - player[2]
+                elif player_vx < 0:
+                    player[0] = w[0] + w[2]
 
     ''' move the player in vertical direction '''
     player[1] += player_vy
     
     ''' resolve collisions vertically '''
-    for w in walls:
-        if intersects.rect_rect(player, w):                    
-            if player_vy > 0:
-                player[1] = w[1] - player[3]
-            if player_vy < 0:
-                player[1] = w[1] + w[3]
+    if stage == 2:
+        for w in walls_one:
+            if intersects.rect_rect(player, w):                    
+                if player_vy > 0:
+                    player[1] = w[1] - player[3]
+                if player_vy < 0:
+                    player[1] = w[1] + w[3]
+
+    elif stage == 3:
+        for w in walls_two:
+            if intersects.rect_rect(player, w):                    
+                if player_vy > 0:
+                    player[1] = w[1] - player[3]
+                if player_vy < 0:
+                    player[1] = w[1] + w[3]
 
 
     ''' here is where you should resolve player collisions with screen edges '''
+    TOP = player[1]
+    BOTTOM = player[1] + player[3]
+    LEFT = player[0]
+    RIGHT = player[0] + player[2]
+    
+    if stage == 1 or stage == 2:
+        if TOP < 0:
+            player[1] = 0
+        elif BOTTOM > HEIGHT:
+            player[1] = HEIGHT - player[3]
+
+        if LEFT < 0:
+            player[0] = 0
+        elif RIGHT > WIDTH:
+            player[0] = WIDTH - player[2]
 
 
+    ''' collisios with doors '''
+    if stage == 2:
+        if door_stage2 == True:
+            if intersects.rect_rect(player, door1):
+                if player_vy > 0:
+                    player[1] = door1[1] - player[3]
+            
 
 
 
     ''' get the coins '''
-    coins = [c for c in coins if not intersects.rect_rect(player, c)]
+    coins_one = [c for c in coins_one if not intersects.rect_rect(player, c)]
+    coins_two = [c for c in coins_two if not intersects.rect_rect(player, c)]
+    if stage == 1:
+        if len(coins_one) == 0:
+            level2 = True
+    elif stage == 2:
+        if len(coins_two) == 0:
+            level3 = True
 
-    if len(coins) == 0:
-        win = True
+   
 
         
     # Drawing code (Describe the picture. It isn't actually drawn yet.)
@@ -134,21 +224,31 @@ while not done:
     pygame.draw.rect(screen, WHITE, player)
 
     if stage == 1:
-        pygame.draw.rect(screen, NEON_BLUE, [100, 100, 1000, 700])
-    elif stage == 2:    
-        for w in walls:
+        pygame.draw.rect(screen, NEON_BLUE, [100, 105, 1000, 700])
+        welcome = font2.render("WELCOME TO THE", 1, GREEN)
+        screen.blit(welcome, [270, 200])
+        maze = font3.render("MAZE", 1, GREEN)
+        screen.blit(maze, [450, 350])
+        space = font.render("HIT THE SPACE BAR TO START", 1, YELLOW)
+        screen.blit(space, [300, 600])
+        screen.blit(img, [0, 0])
+        
+
+    elif stage == 2:
+        pygame.draw.rect(screen, GREEN, door1)
+        for w in walls_one:
             pygame.draw.rect(screen, RED, w)
 
-        for c in coins:
+        for c in coins_one:
             pygame.draw.rect(screen, YELLOW, c)
         
-        if win:
-            font = pygame.font.Font(None, 48)
-            text = font.render("You Win!", 1, GREEN)
-            screen.blit(text, [400, 200])
+
     elif stage == 3:
-        for w in walls:
+        for w in walls_two:
             pygame.draw.rect(screen, GREEN, w)
+
+        for c in coins_two:
+            pygame.draw.rect(screen, YELLOW, c)
 
     
     # Update screen (Actually draw the picture in the window.)
