@@ -55,7 +55,18 @@ wall6 =  [1150, 25, 25, 315]
 wall7 =  [997, 315, 153, 25]
 wall8 =  [997, 315, 25, 125]
 wall9 =  [1000, 415, 200, 25]
-wall10 = [0, 485, 200, 25]
+wall10 = [0, 500, 200, 25]
+wall11 = [1000, 500, 200, 25]
+wall12 = [200, 500, 25, 125]
+wall13 = [50, 625, 175, 25]
+wall14 = [25, 625, 25, 250]
+wall15 = [50, 850, 1125, 25]
+wall16 = [1150, 625, 25, 225]
+wall17 = [1000, 625, 150, 25]
+wall18 = [1000, 500, 25, 125]
+
+wall19 = [100, 80, 100, 100]
+wall20 = [100, 225, 100, 50]
 
 #walls level 2
 
@@ -63,7 +74,7 @@ wall10 = [0, 485, 200, 25]
 wall65 = [25, 25, 25, 25]
 
 
-walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10]
+walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20]
 walls_two = [wall65]
 
 # doors
@@ -191,9 +202,9 @@ while not done:
             player[1] = HEIGHT - player[3]
 
         if LEFT < 0:
-            player[0] = 0
-        elif RIGHT > WIDTH:
             player[0] = WIDTH - player[2]
+        elif RIGHT > WIDTH:
+            player[0] = 0
 
 
     ''' collisios with doors '''
@@ -211,7 +222,7 @@ while not done:
     coins_two = [c for c in coins_two if not intersects.rect_rect(player, c)]
     if stage == 1:
         if len(coins_one) == 0:
-            level2 = True
+            door_stage2 = False
     elif stage == 2:
         if len(coins_two) == 0:
             level3 = True
@@ -235,7 +246,7 @@ while not done:
         
 
     elif stage == 2:
-        pygame.draw.rect(screen, GREEN, door1)
+        #pygame.draw.rect(screen, GREEN, door1)
         for w in walls_one:
             pygame.draw.rect(screen, RED, w)
 
