@@ -33,10 +33,10 @@ font2 = pygame.font.Font(None, 100)
 font3 = pygame.font.Font(None, 150)
 
 #images
-img = pygame.image.load('playerArrow.png')
+    #img = pygame.image.load('playerArrow.png')
 
 #set stage
-stage = 2
+stage = 0
 
 
 # Make a player
@@ -48,8 +48,8 @@ player_speed = 5
 # make walls level 1
 wall1 =  [0, 415, 200, 25]
 wall2 =  [25, 25, 25, 315]
-wall3 =  [50, 315, 153, 25]
-wall4 =  [200, 315, 25, 125]
+wall3 =  [50, 315, 150, 25]
+wall4 =  [175, 315, 25, 125]
 wall5 =  [50, 25, 1125, 25]
 wall6 =  [1150, 25, 25, 315]
 wall7 =  [997, 315, 153, 25]
@@ -67,6 +67,15 @@ wall18 = [1000, 500, 25, 125]
 
 wall19 = [100, 80, 100, 100]
 wall20 = [100, 225, 100, 50]
+wall21 = [250, 80, 200, 100]
+
+wall22 = [500, 50, 25, 130]
+wall23 = [250, 225, 25, 217]
+wall24 = [275, 321, 175, 25]
+wall25 = [425, 225, 175, 25]
+wall26 = [500, 250, 25, 100]
+wall27 = [575, 80, 300, 100]
+wall28 = [925, 80, 175, 100]
 
 #walls level 2
 
@@ -74,7 +83,7 @@ wall20 = [100, 225, 100, 50]
 wall65 = [25, 25, 25, 25]
 
 
-walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20]
+walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28]
 walls_two = [wall65]
 
 # doors
@@ -107,7 +116,7 @@ level2 = False
 level3 = False
 
 #doors
-door_stage2 = True
+door_stage1 = True
  
 
 # Game loop
@@ -121,7 +130,7 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
         elif event.type == pygame.KEYDOWN:
-            if stage == 1:
+            if stage == 0:
                 if event.key == pygame.K_SPACE:
                     stage += 1
 
@@ -152,7 +161,7 @@ while not done:
     player[0] += player_vx
 
     ''' resolve collisions horizontally '''
-    if stage == 2:
+    if stage == 1:
         for w in walls_one:
             if intersects.rect_rect(player, w):        
                 if player_vx > 0:
@@ -160,7 +169,7 @@ while not done:
                 elif player_vx < 0:
                     player[0] = w[0] + w[2]
 
-    elif stage == 3:
+    elif stage == 2:
         for w in walls_two:
             if intersects.rect_rect(player, w):        
                 if player_vx > 0:
@@ -172,7 +181,7 @@ while not done:
     player[1] += player_vy
     
     ''' resolve collisions vertically '''
-    if stage == 2:
+    if stage == 1:
         for w in walls_one:
             if intersects.rect_rect(player, w):                    
                 if player_vy > 0:
@@ -180,7 +189,7 @@ while not done:
                 if player_vy < 0:
                     player[1] = w[1] + w[3]
 
-    elif stage == 3:
+    elif stage == 2:
         for w in walls_two:
             if intersects.rect_rect(player, w):                    
                 if player_vy > 0:
@@ -195,7 +204,7 @@ while not done:
     LEFT = player[0]
     RIGHT = player[0] + player[2]
     
-    if stage == 1 or stage == 2:
+    if stage == 0 or stage == 1:
         if TOP < 0:
             player[1] = 0
         elif BOTTOM > HEIGHT:
@@ -208,8 +217,8 @@ while not done:
 
 
     ''' collisios with doors '''
-    if stage == 2:
-        if door_stage2 == True:
+    if stage == 1:
+        if door_stage1 == True:
             if intersects.rect_rect(player, door1):
                 if player_vy > 0:
                     player[1] = door1[1] - player[3]
@@ -222,7 +231,7 @@ while not done:
     coins_two = [c for c in coins_two if not intersects.rect_rect(player, c)]
     if stage == 1:
         if len(coins_one) == 0:
-            door_stage2 = False
+            door_stage1 = False
     elif stage == 2:
         if len(coins_two) == 0:
             level3 = True
@@ -232,9 +241,10 @@ while not done:
         
     # Drawing code (Describe the picture. It isn't actually drawn yet.)
     screen.fill(BLACK)
-    pygame.draw.rect(screen, WHITE, player)
+    
 
-    if stage == 1:
+    if stage == 0:
+        
         pygame.draw.rect(screen, NEON_BLUE, [100, 105, 1000, 700])
         welcome = font2.render("WELCOME TO THE", 1, GREEN)
         screen.blit(welcome, [270, 200])
@@ -242,10 +252,11 @@ while not done:
         screen.blit(maze, [450, 350])
         space = font.render("HIT THE SPACE BAR TO START", 1, YELLOW)
         screen.blit(space, [300, 600])
-        screen.blit(img, [0, 0])
+        
         
 
-    elif stage == 2:
+    elif stage == 1:
+        pygame.draw.rect(screen, WHITE, player)
         #pygame.draw.rect(screen, GREEN, door1)
         for w in walls_one:
             pygame.draw.rect(screen, RED, w)
@@ -254,7 +265,8 @@ while not done:
             pygame.draw.rect(screen, YELLOW, c)
         
 
-    elif stage == 3:
+    elif stage == 2:
+        pygame.draw.rect(screen, WHITE, player)
         for w in walls_two:
             pygame.draw.rect(screen, GREEN, w)
 
