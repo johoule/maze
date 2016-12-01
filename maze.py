@@ -88,14 +88,37 @@ wall33 = [593, 400, 25, 100]
 
 
 #walls level 2
-wall60 = [25, 25, 1150, 25]
-wall61 = [1150, 50, 25, 825]
-wall62 = [25, 50, 25, 825]
-wall63 = [50, 850, 1100, 25] 
+wall60 = [25, 25, 1150, 25]      #these lines are the borders
+wall61 = [1150, 50, 25, 825]     #  
+wall62 = [25, 50, 25, 825]       #
+wall63 = [50, 850, 1100, 25]     #
 
+wall64 = [50, 200, 25, 25]       #figure 2
+wall65 = [75, 125, 25, 100]
+wall66 = [100, 125, 75, 25]
+wall67 = [150, 75, 25, 50]
+wall68 = [75, 75, 75, 25]
+
+wall69 = [50, 400, 25, 25]      #figure 3
+wall70 = [75, 250, 25, 175]
+wall71 = [100, 250, 25, 25]
+wall72 = [125, 175, 25, 100]
+wall73 = [150, 175, 50, 25]
+wall74 = [200, 75, 25, 125]
+wall75 = [225, 75, 75, 25]
+wall76 = [275, 100, 25, 100]
+wall77 = [250, 175, 25, 25]
+wall78 = [225, 125, 25, 25]
+
+wall79 = [325, 50, 25, 200]    #figure 4
+wall80 = [175, 225, 150, 25]
+wall81 = [175, 250, 25, 150]
+wall82 = [200, 375, 75, 25]
 
 walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28, wall29, wall30, wall31, wall32, wall33]
-walls_two = [wall60, wall61, wall62, wall63]
+walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wall68,
+             wall69, wall70, wall71, wall72, wall73, wall74, wall75, wall76,
+             wall77, wall78, wall79, wall80, wall81, wall82]
 
 # doors
 door1 = [900, 800, 25, 300]
