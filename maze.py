@@ -37,7 +37,7 @@ font3 = pygame.font.Font(None, 150)
     #img = pygame.image.load('playerArrow.png')
 
 #set stage
-stage = 0
+stage = 2
 
 
 # Make a player
@@ -88,16 +88,17 @@ wall33 = [593, 400, 25, 100]
 
 
 #walls level 2
-
-
-wall65 = [25, 25, 25, 25]
+wall60 = [25, 25, 1150, 25]
+wall61 = [1150, 50, 25, 825]
+wall62 = [25, 50, 25, 825]
+wall63 = [50, 850, 1100, 25] 
 
 
 walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28, wall29, wall30, wall31, wall32, wall33]
-walls_two = [wall65]
+walls_two = [wall60, wall61, wall62, wall63]
 
 # doors
-door1 = [600, 500, 25, 300]
+door1 = [900, 800, 25, 300]
 
 
 # Make coins level 1
