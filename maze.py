@@ -5,6 +5,7 @@ import intersects
 # Initialize game engine
 pygame.init()
 
+# here is a comment
 
 # Window
 WIDTH = 1200
@@ -72,10 +73,19 @@ wall21 = [250, 80, 200, 100]
 wall22 = [500, 50, 25, 130]
 wall23 = [250, 225, 25, 217]
 wall24 = [275, 321, 175, 25]
-wall25 = [425, 225, 175, 25]
+wall25 = [350, 225, 350, 25]
 wall26 = [500, 250, 25, 100]
 wall27 = [575, 80, 300, 100]
 wall28 = [925, 80, 175, 100]
+
+wall29 = [925, 230, 175, 50]
+
+wall30 = [500, 500, 200, 25]
+wall31 = [500, 400, 25, 100]
+wall32 = [675, 400, 25, 100]
+wall33 = [593, 400, 25, 100]
+
+
 
 #walls level 2
 
@@ -83,7 +93,7 @@ wall28 = [925, 80, 175, 100]
 wall65 = [25, 25, 25, 25]
 
 
-walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28]
+walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28, wall29, wall30, wall31, wall32, wall33]
 walls_two = [wall65]
 
 # doors
