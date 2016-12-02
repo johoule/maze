@@ -41,7 +41,7 @@ stage = 2
 
 
 # Make a player
-player =  [100, 75, 25, 25]
+player =  [600, 400, 25, 25]
 player_vx = 0
 player_vy = 0
 player_speed = 5
@@ -119,12 +119,64 @@ wall93 = [50, 450, 150, 25]    #figure 5
 wall94 = [175, 400, 25, 50]
 wall95 = [125, 400, 50, 25]
 
-wall96 = [175, 200, 25, 125]
+wall96 = [175, 200, 25, 125] # figure 6 .....
+
+wall100 = [125, 300, 25, 75] # figure 7
+wall101 = [150, 350, 175, 25]
+wall102 = [325, 325, 25, 100]
+wall103 = [275, 400, 50, 25]
+wall104 = [225, 375, 25, 250]
+wall105 = [75, 500, 150, 25]
+wall106 = [125, 600, 125, 25]
+wall107 = [125, 550, 25, 50]
+wall108 = [150, 550, 50, 25]
+wall109 = [75, 525, 25, 150]
+wall110 = [100, 650, 275, 25]
+wall111 = [375, 250, 25, 575]
+wall112 = [275, 450, 100, 25]
+wall113 = [275, 475, 25, 150]
+wall114 = [300, 600, 50, 25]
+wall115 = [325, 500, 25, 100]
+wall116 = [225, 800, 150, 25]
+wall117 = [175, 750, 25, 100]
+wall118 = [200, 750, 150, 25]
+wall119 = [325, 700, 25, 50]
+wall120 = [75, 700, 250, 25]
+wall121 = [75, 725, 25, 100]
+wall122 = [125, 750, 25, 100]
+
+wall123 = [550, 400, 25, 100] # center figure (starting and ending point)
+wall124 = [625, 400, 25, 100]
+wall125 = [575, 425, 50, 25]
+wall126 = [575, 475, 25, 25]
+
+wall127 = [400, 250, 300, 25] # figure 9
+
+wall133 = [425, 300, 25, 525] # figure 10
+wall134 = [450, 800, 475, 25]
+wall135 = [950, 800, 25, 50]
+wall136 = [975, 800, 50, 25]
+wall137 = [1000, 750, 25, 50]
+wall138 = [1025, 750, 100, 25]
+wall139 = [1100, 775, 25, 50]
+wall140 = [1050, 800, 50, 25]
+wall141 = [525, 750, 25, 50]
+wall142 = [550, 750, 50, 25]
+wall143 = [475, 700, 25, 75]
+
+
+
 
 walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28, wall29, wall30, wall31, wall32, wall33]
 walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wall68,
              wall69, wall70, wall71, wall72, wall73, wall74, wall75, wall76,
-             wall77, wall78, wall93, wall94, wall95, wall96]
+             wall77, wall78, wall93, wall94, wall95, wall96, wall100, wall101,
+             wall102, wall103, wall104, wall105, wall106, wall107, wall108,
+             wall109, wall110, wall111, wall112, wall113, wall114, wall115,
+             wall116, wall117, wall118, wall119, wall120, wall121, wall122,
+             wall123, wall124, wall125, wall126, wall127, wall133, wall134,
+             wall135, wall136, wall137, wall138, wall139, wall140, wall141,
+             wall142, wall143]
 
 # doors
 door1 = [900, 800, 25, 300]
