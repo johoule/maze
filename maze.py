@@ -163,6 +163,22 @@ wall140 = [1050, 800, 50, 25]
 wall141 = [525, 750, 25, 50]
 wall142 = [550, 750, 50, 25]
 wall143 = [475, 700, 25, 75]
+wall144 = [500, 700, 150, 25]
+wall145 = [625, 725, 25, 50]
+wall146 = [650, 750, 325, 25]
+wall147 = [950, 700, 25, 50]
+wall148 = [975, 700, 150, 25]
+wall149 = [900, 775, 25, 25]  #....
+
+wall158 = [450, 600, 100, 25]
+wall159 = [475, 625, 25, 50]
+wall160 = [525, 650, 25, 50]
+wall161 = [525, 550, 25, 50]
+wall162 = [550, 550, 425, 25]
+wall163 = [625, 500, 25, 50]
+wall164 = [575, 525, 25, 25]
+wall165 = [525, 525, 25, 25]
+wall166 = [650, 500, 425, 25]
 
 
 
@@ -176,7 +192,9 @@ walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wal
              wall116, wall117, wall118, wall119, wall120, wall121, wall122,
              wall123, wall124, wall125, wall126, wall127, wall133, wall134,
              wall135, wall136, wall137, wall138, wall139, wall140, wall141,
-             wall142, wall143]
+             wall142, wall143, wall144, wall145, wall146, wall147, wall148,
+             wall149, wall158, wall159, wall160, wall161, wall162, wall163,
+             wall164, wall165, wall166]
 
 # doors
 door1 = [900, 800, 25, 300]
