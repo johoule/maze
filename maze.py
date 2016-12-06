@@ -110,16 +110,23 @@ wall76 = [275, 100, 25, 100]
 wall77 = [250, 175, 25, 25]
 wall78 = [225, 125, 25, 25]
 
-wall79 = [325, 50, 25, 200]    #figure 4
-wall80 = [175, 225, 150, 25]
-wall81 = [175, 250, 25, 150]
-wall82 = [200, 375, 75, 25]    #... come back to this figure
+wall79 = [275, 200, 25, 50]    #figure 4
+wall80 = [325, 75,  25, 200]
+wall81 = [350, 200, 150, 25]
+wall82 = [475, 75, 25, 125]
+wall83 = [375, 75, 100, 25]
+wall84 = [375, 100, 25, 75]
+wall85 = [400, 150, 50, 25]
+wall86 = [425, 125, 25, 25]
 
 wall93 = [50, 450, 150, 25]    #figure 5
 wall94 = [175, 400, 25, 50]
 wall95 = [125, 400, 50, 25]
 
 wall96 = [175, 200, 25, 125] # figure 6 .....
+wall97 = [200, 300, 100, 25]
+wall98 = [275, 275, 75, 25]
+wall99 = [225, 225, 25, 75]
 
 wall100 = [125, 300, 25, 75] # figure 7
 wall101 = [150, 350, 175, 25]
@@ -145,7 +152,7 @@ wall120 = [75, 700, 250, 25]
 wall121 = [75, 725, 25, 100]
 wall122 = [125, 750, 25, 100]
 
-wall123 = [550, 400, 25, 100] # center figure (starting and ending point)
+wall123 = [550, 375, 25, 125] # center figure (starting and ending point)
 wall124 = [625, 400, 25, 100]
 wall125 = [575, 425, 50, 25]
 wall126 = [575, 475, 25, 25]
@@ -168,9 +175,13 @@ wall145 = [625, 725, 25, 50]
 wall146 = [650, 750, 325, 25]
 wall147 = [950, 700, 25, 50]
 wall148 = [975, 700, 150, 25]
-wall149 = [900, 775, 25, 25]  #....
+wall149 = [900, 775, 25, 25]
+wall150 = [1100, 450, 25, 250]
+wall151 = [1050, 550, 50, 25]
+wall152 = [1050, 575, 25, 100]
+wall153 = [900, 450, 200, 25] #....
 
-wall158 = [450, 600, 100, 25]
+wall158 = [450, 600, 100, 25]  #figure 11
 wall159 = [475, 625, 25, 50]
 wall160 = [525, 650, 25, 50]
 wall161 = [525, 550, 25, 50]
@@ -179,6 +190,63 @@ wall163 = [625, 500, 25, 50]
 wall164 = [575, 525, 25, 25]
 wall165 = [525, 525, 25, 25]
 wall166 = [650, 500, 425, 25]
+wall167 = [1000, 525, 25, 150]
+wall168 = [725, 650, 275, 25]  
+wall169 = [575, 650, 125, 25]
+wall170 = [675, 675, 25, 50]
+wall171 = [700, 700, 225, 25]
+wall172 = [900, 675, 25, 25]
+wall173 = [575, 600, 25, 50]
+wall174 = [600, 600, 375, 25]
+
+wall175 = [600, 375, 50, 25] #random figure i made up to correct for adding center figure
+wall176 = [475, 475, 75, 25]
+wall177 = [475, 500, 25, 75]
+wall178 = [450, 425, 75, 25]
+wall179 = [475, 375, 75, 25]
+
+wall180 = [850, 400, 300, 25]
+wall181 = [850, 425, 25, 50]
+wall182 = [675, 450, 175, 25]
+wall183 = [675, 325, 25, 125]
+wall184 = [475, 325, 200, 25]
+wall185 = [475, 275, 25, 25]
+wall186 = [525, 300, 25, 25]
+wall187 = [575, 275, 25, 25]
+wall188 = [625, 300, 25, 25]
+wall189 = [675, 275, 25, 25]
+
+wall190 = [1000, 75, 125, 25]
+wall191 = [1000, 100, 25, 150]
+wall192 = [1050, 125, 100, 25]
+wall193 = [725, 250, 300, 25]
+wall194 = [725, 275, 25, 150]
+wall195 = [750, 400, 75, 25]
+wall196 = [800, 350, 25, 50]
+wall197 = [825, 350, 300, 25]
+wall198 = [1100, 175, 25, 175]
+wall199 = [1050, 175, 50, 25]
+wall200 = [1050, 200, 25, 125]
+wall201 = [775, 300, 275, 25]
+wall202 = [775, 350, 25, 25]
+wall203 = [525, 50, 25, 200]
+wall204 = [550, 125, 450, 25]
+wall205 = [575, 50, 25, 50]
+wall206 = [625, 75, 25, 150]
+wall207 = [675, 50, 25, 50]
+wall208 = [725, 75, 25, 150]
+wall209 = [775, 50, 25, 50]
+wall210 = [825, 75, 25, 150]
+wall211 = [875, 50, 25, 50]
+wall212 = [925, 75, 25, 150]
+wall213 = [975, 75, 25, 25]
+wall214 = [575, 175, 25, 75]
+wall215 = [675, 175, 25, 75]
+wall216 = [775, 175, 25, 75]
+wall217 = [875, 175, 25, 75]
+wall218 = [975, 175, 25, 25]
+wall219 = [975, 225, 25, 25]
+
 
 
 
@@ -186,15 +254,24 @@ wall166 = [650, 500, 425, 25]
 walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28, wall29, wall30, wall31, wall32, wall33]
 walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wall68,
              wall69, wall70, wall71, wall72, wall73, wall74, wall75, wall76,
-             wall77, wall78, wall93, wall94, wall95, wall96, wall100, wall101,
-             wall102, wall103, wall104, wall105, wall106, wall107, wall108,
-             wall109, wall110, wall111, wall112, wall113, wall114, wall115,
-             wall116, wall117, wall118, wall119, wall120, wall121, wall122,
-             wall123, wall124, wall125, wall126, wall127, wall133, wall134,
-             wall135, wall136, wall137, wall138, wall139, wall140, wall141,
-             wall142, wall143, wall144, wall145, wall146, wall147, wall148,
-             wall149, wall158, wall159, wall160, wall161, wall162, wall163,
-             wall164, wall165, wall166]
+             wall77, wall78, wall79, wall80, wall81, wall82, wall83, wall84,
+             wall85, wall86, wall93, wall94, wall95, wall96, wall97, wall98,
+             wall99, wall100, wall101, wall102, wall103, wall104, wall105,
+             wall106, wall107, wall108, wall109, wall110, wall111, wall112,
+             wall113, wall114, wall115, wall116, wall117, wall118, wall119,
+             wall120, wall121, wall122, wall123, wall124, wall125, wall126,
+             wall127, wall133, wall134, wall135, wall136, wall137, wall138,
+             wall139, wall140, wall141, wall142, wall143, wall144, wall145,
+             wall146, wall147, wall148, wall149, wall150, wall151, wall152,
+             wall153, wall158, wall159, wall160, wall161, wall162, wall163,
+             wall164, wall165, wall166, wall167, wall168, wall169, wall170,
+             wall171, wall172, wall173, wall174, wall175, wall176, wall177,
+             wall178, wall179, wall180, wall181, wall182, wall183, wall184,
+             wall185, wall186, wall187, wall188, wall189, wall190, wall191,
+             wall192, wall193, wall194, wall195, wall196, wall197, wall198,
+             wall199, wall200, wall201, wall202, wall203, wall204, wall205,
+             wall206, wall207, wall208, wall209, wall210, wall211, wall212,
+             wall213, wall214, wall215, wall216, wall217, wall218, wall219]
 
 # doors
 door1 = [900, 800, 25, 300]
@@ -214,12 +291,13 @@ coin10 = [0, 600, 25, 25]
 coin11 = [0, 300, 25, 25]
 
 # make coins level 2
-coin14 = [300, 0, 25, 25]
-coin15 = [400, 0, 25, 25]
-coin16 = [500, 0, 25, 25]
+coin70 = [50, 50 ,25, 25]
+coin71 = [250, 50, 25, 25]
+coin72 = [450, 50, 25, 25]
+coin73 = [550, 50, 25, 25]
 
 coins_one = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10, coin11]
-coins_two = [coin14, coin15, coin16]
+coins_two = [coin70, coin71, coin72, coin73]
 
 #levels
 level2 = False
