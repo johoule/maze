@@ -291,13 +291,77 @@ coin10 = [0, 600, 25, 25]
 coin11 = [0, 300, 25, 25]
 
 # make coins level 2
-coin70 = [50, 50 ,25, 25]
+coin70 = [75, 50 ,25, 25]   #  y = 25
 coin71 = [250, 50, 25, 25]
-coin72 = [450, 50, 25, 25]
-coin73 = [550, 50, 25, 25]
+coin72 = [375, 50, 25, 25]
+coin73 = [450, 50, 25, 25]
+coin74 = [550, 50, 25, 25]
+coin75 = [600, 50, 25, 25]
+coin76 = [700, 50, 25, 25]
+coin77 = [800, 50, 25, 25]
+coin78 = [900, 50, 25, 25]
+coin79 = [1000, 50, 25, 25]
+coin80 = [1075, 50, 25, 25]
+
+coin81 = [125, 100, 25, 25]  # y = 100
+coin82 = [225, 100, 25, 25]
+coin83 = [350, 100, 25, 25]
+coin84 = [425, 100, 25, 25]
+coin85 = [500, 100, 25, 25]
+coin86 = [575, 100, 25, 25]
+coin87 = [650, 100, 25, 25]
+coin88 = [750, 100, 25, 25]
+coin89 = [850, 100, 25, 25]
+coin90 = [975, 100, 25, 25]
+coin91 = [1100, 100, 25, 25]
+
+coin92 = [300, 125, 25, 25]  # y = 125
+coin93 = [400, 125, 25, 25]
+
+coin94 = [150, 150, 25, 25] # y = 150
+coin95 = [550, 150, 25, 25]
+coin96 = [700, 150, 25, 25]
+coin97 = [800, 150, 25, 25]
+coin98 = [900, 150, 25, 25]
+coin99 = [975, 150, 25, 25]
+coin100 = [1050, 150, 25, 25]
+
+coin101 = [50, 175, 25, 25]  #y = 175
+coin102 = [450, 175, 25, 25]
+coin103 = [500, 175, 25, 25]
+coin104 = [650, 175, 25, 25]
+coin105 = [750, 175, 25, 25]
+
+coin106 = [100, 200, 25, 25]  # y = 200
+coin107 = [150, 200, 25, 25]
+coin108 = [300, 200, 25, 25]
+coin109 = [600, 200, 25, 25]
+coin110 = [850, 200, 25, 25]
+coin111 = [975, 200, 25, 25]
+coin112 = [1075, 200, 25, 25]
+
+coin113 = [400, 225, 25, 25]  # y = 225
+coin114 = [475, 225, 25, 25]
+coin115 = [550, 225, 25, 25]
+coin116 = [650, 225, 25, 25]
+coin117 = [725, 225, 25, 25]
+coin118 = [800, 225, 25, 25]
+coin119 = [1125, 225, 25, 25]
+
+coin120 = [350, 250, 25, 25]  # y = 250
+
+
+
+
 
 coins_one = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10, coin11]
-coins_two = [coin70, coin71, coin72, coin73]
+coins_two = [coin70, coin71, coin72, coin73, coin74, coin75, coin76, coin77,
+             coin78, coin79, coin80, coin81, coin82, coin83, coin84, coin85,
+             coin86, coin87, coin88, coin89, coin90, coin91, coin92, coin93,
+             coin94, coin95, coin96, coin97, coin98, coin99, coin100, coin101,
+             coin102, coin103, coin104, coin105, coin106, coin107, coin108,
+             coin109, coin110, coin111, coin112, coin113, coin114, coin115,
+             coin116, coin117, coin118, coin119, coin120]
 
 #levels
 level2 = False
@@ -456,12 +520,19 @@ while not done:
     elif stage == 2:
         pygame.draw.rect(screen, WHITE, player)
         for w in walls_two:
-            pygame.draw.rect(screen, GREEN, w)
+            pygame.draw.rect(screen, NEON_BLUE, w)
 
         for c in coins_two:
             pygame.draw.rect(screen, YELLOW, c)
 
-    
+
+    gray = (175, 175, 175)
+    for y in range(0, HEIGHT, 25):
+        pygame.draw.line(screen, gray, [0, y], [WIDTH, y])
+        
+    for x in range(0, WIDTH, 25):
+        pygame.draw.line(screen, gray, [x, 0], [x, HEIGHT])
+
     # Update screen (Actually draw the picture in the window.)
     pygame.display.flip()
 
