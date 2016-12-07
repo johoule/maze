@@ -350,8 +350,45 @@ coin119 = [1125, 225, 25, 25]
 
 coin120 = [350, 250, 25, 25]  # y = 250
 
+coin121 = [200, 275, 25, 25]  # y = 275
+coin122 = [250, 275, 25, 25]
+coin123 = [450, 275, 25, 25]
+coin124 = [550, 275, 25, 25]
+coin125 = [650, 275, 25, 25]
+coin126 = [825, 275, 25, 25]
+coin127 = [925, 275, 25, 25]
+coin128 = [1075, 275, 25, 25]
 
+coin129 = [50, 300, 25, 25]  # y = 300
+coin130 = [500, 300, 25, 25]
+coin131 = [600, 300, 25, 25]
 
+coin132 = [100, 325, 25, 25] # y = 325
+coin133 = [150, 325, 25, 25]
+coin134 = [300, 325, 25, 25]
+coin135 = [900, 325, 25, 25]
+coin136 = [1125, 325, 25, 25]
+
+coin137 = [350, 350, 25, 25]  # y = 350
+coin138 = [400, 350, 25, 25]
+coin139 = [550, 350, 25, 25]
+
+coin140 = [50, 375, 25, 25] # y = 375
+coin141 = [300, 375, 25, 25]
+coin142 = [700, 375, 25, 25]
+coin143 = [775, 375, 25, 25]
+coin144 = [850, 375, 25, 25]
+coin145 = [975, 375, 25, 25]
+coin146 = [1075, 375, 25, 25]
+
+coin147 = [450, 400, 25, 25] # y = 400
+
+coin148 = [50, 425, 25, 25] # y = 425
+coin149 = [150, 425, 25, 25]
+coin150 = [350, 425, 25, 25]
+coin151 = [650, 425, 25, 25]
+coin152 = [750, 425, 25, 25]
+coin153 = [1000, 425, 25, 25]
 
 
 coins_one = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10, coin11]
@@ -361,7 +398,12 @@ coins_two = [coin70, coin71, coin72, coin73, coin74, coin75, coin76, coin77,
              coin94, coin95, coin96, coin97, coin98, coin99, coin100, coin101,
              coin102, coin103, coin104, coin105, coin106, coin107, coin108,
              coin109, coin110, coin111, coin112, coin113, coin114, coin115,
-             coin116, coin117, coin118, coin119, coin120]
+             coin116, coin117, coin118, coin119, coin120, coin121, coin122,
+             coin123, coin124, coin125, coin126, coin127, coin128, coin129,
+             coin130, coin131, coin132, coin133, coin134, coin135, coin136,
+             coin137, coin138, coin139, coin140, coin141, coin142, coin143,
+             coin144, coin145, coin146, coin147, coin148, coin149, coin150,
+             coin151, coin152, coin153]
 
 #levels
 level2 = False
@@ -525,14 +567,14 @@ while not done:
         for c in coins_two:
             pygame.draw.rect(screen, YELLOW, c)
 
-
+    '''
     gray = (175, 175, 175)
     for y in range(0, HEIGHT, 25):
         pygame.draw.line(screen, gray, [0, y], [WIDTH, y])
         
     for x in range(0, WIDTH, 25):
         pygame.draw.line(screen, gray, [x, 0], [x, HEIGHT])
-
+    '''
     # Update screen (Actually draw the picture in the window.)
     pygame.display.flip()
 
