@@ -276,6 +276,13 @@ walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wal
 # doors
 door1 = [900, 800, 25, 300]
 
+door2 = [600, 475, 25, 25]
+
+
+#teleporters
+
+teleport2 = [575, 450, 25, 25]
+
 
 # Make coins level 1
 coin1 = [50, 50, 25, 25]
@@ -390,6 +397,76 @@ coin151 = [650, 425, 25, 25]
 coin152 = [750, 425, 25, 25]
 coin153 = [1000, 425, 25, 25]
 
+coin154 = [500, 450, 25, 25] # y = 450
+
+coin155 = [700, 475, 25, 25]  # y = 475
+coin156 = [825, 475, 25, 25]
+coin157 = [975, 475, 25, 25]
+coin158 = [1125, 475, 25, 25]
+
+coin159 = [50, 500, 25, 25]  # y = 500
+coin160 = [250, 500, 25, 25]
+coin161 = [400, 500, 25, 25]
+
+coin162 = [350, 525, 25, 25]  # y = 525
+coin163 = [550, 525, 25, 25]
+coin164 = [600, 525, 25, 25]
+coin165 = [650, 525, 25, 25]
+coin166 = [850, 525, 25, 25]
+coin167 = [1050, 525, 25, 25]
+
+coin168 = [150, 575, 25, 25] # y = 575
+coin169 = [300, 575, 25, 25]
+coin170 = [475, 575, 25, 25]
+coin171 = [625, 575, 25, 25]
+coin172 = [750, 575, 25, 25]
+coin173 = [875, 575, 25, 25]
+coin174 = [1075, 575, 25, 25]
+
+coin175 = [975, 600, 25, 25]  # y = 600
+coin176 = [1025, 600, 25, 25]
+
+coin177 = [200, 625, 25, 25]  # y = 625
+coin178 = [350, 625, 25, 25]
+coin179 = [450, 625, 25, 25]
+coin180 = [525, 625, 25, 25]
+coin181 = [600, 625, 25, 25]
+coin182 = [825, 625, 25, 25]
+coin183 = [1125, 625, 25, 25]
+
+coin184 = [125, 675, 25, 25]  # y = 675
+coin185 = [275, 675, 25, 25]
+coin186 = [500, 675, 25, 25]
+coin187 = [750, 675, 25, 25]
+coin188 = [875, 675, 25, 25]
+coin189 = [950, 675, 25, 25]
+coin190 = [1050, 675, 25, 25]
+
+coin191 = [400, 700, 25, 25] # y = 700
+
+coin192 = [125, 725, 25, 25]  # y = 725
+coin193 = [300, 725, 25, 25]
+coin194 = [500, 725, 25, 25]
+coin195 = [725, 725, 25, 25]
+
+coin196 = [450, 750, 25, 25]  # y = 750
+coin197 = [600, 750, 25, 25]
+
+coin198 = [50, 775, 25, 25]  # y = 775
+coin199 = [225, 775, 25, 25]
+coin200 = [550, 775, 25, 25]
+coin201 = [775, 775, 25, 25]
+coin202 = [875, 775, 25, 25]
+coin203 = [1075, 775, 25, 25]
+
+coin204 = [150, 825, 25, 25]  # y = 825
+coin205 = [300, 825, 25, 25]
+coin206 = [500, 825, 25, 25]
+coin207 = [675, 825, 25, 25]
+coin208 = [850, 825, 25, 25]
+coin209 = [975, 825, 25, 25]
+coin210 = [1125, 825, 25, 25]
+
 
 coins_one = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10, coin11]
 coins_two = [coin70, coin71, coin72, coin73, coin74, coin75, coin76, coin77,
@@ -403,7 +480,15 @@ coins_two = [coin70, coin71, coin72, coin73, coin74, coin75, coin76, coin77,
              coin130, coin131, coin132, coin133, coin134, coin135, coin136,
              coin137, coin138, coin139, coin140, coin141, coin142, coin143,
              coin144, coin145, coin146, coin147, coin148, coin149, coin150,
-             coin151, coin152, coin153]
+             coin151, coin152, coin153, coin154, coin155, coin156, coin157,
+             coin158, coin159, coin160, coin161, coin162, coin163, coin164,
+             coin165, coin166, coin167, coin168, coin169, coin170, coin171,
+             coin172, coin173, coin174, coin175, coin176, coin177, coin178,
+             coin179, coin180, coin181, coin182, coin183, coin184, coin185,
+             coin186, coin187, coin188, coin189, coin190, coin191, coin192,
+             coin193, coin194, coin195, coin196, coin197, coin198, coin199,
+             coin200, coin201, coin202, coin203, coin204, coin205, coin206,
+             coin207, coin208, coin209, coin210]
 
 #levels
 level2 = False
@@ -411,6 +496,7 @@ level3 = False
 
 #doors
 door_stage1 = True
+door_stage2 = True
  
 
 # Game loop
@@ -516,6 +602,18 @@ while not done:
             if intersects.rect_rect(player, door1):
                 if player_vy > 0:
                     player[1] = door1[1] - player[3]
+    elif stage == 2:
+        if door_stage2 == True:
+            if intersects.rect_rect(player, door2):
+                if player_vy < 0:
+                    player[1] = door2[1] + player[3]
+
+
+    ''' collisions with teleporters '''
+    if stage == 2:
+        if intersects.rect_rect(player, teleport2):
+            if player_vx > 0:
+                stage += 1
             
 
 
@@ -528,7 +626,7 @@ while not done:
             door_stage1 = False
     elif stage == 2:
         if len(coins_two) == 0:
-            level3 = True
+            door_stage2 = False
 
    
 
@@ -566,6 +664,9 @@ while not done:
 
         for c in coins_two:
             pygame.draw.rect(screen, YELLOW, c)
+
+        pygame.draw.rect(screen, GREEN, door2)
+        pygame.draw.rect(screen, RED, teleport2)
 
     '''
     gray = (175, 175, 175)
