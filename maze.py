@@ -34,10 +34,10 @@ font2 = pygame.font.Font(None, 100)
 font3 = pygame.font.Font(None, 150)
 
 #images
-    #img = pygame.image.load('playerArrow.png')
+img = pygame.image.load('cornmaze.png')
 
 #set stage
-stage = 2
+stage = 0
 
 
 # Make a player
@@ -47,44 +47,99 @@ player_vy = 0
 player_speed = 5
 
 # make walls level 1
-wall1 =  [0, 415, 200, 25]
-wall2 =  [25, 25, 25, 315]
-wall3 =  [50, 315, 150, 25]
-wall4 =  [175, 315, 25, 125]
-wall5 =  [50, 25, 1125, 25]
-wall6 =  [1150, 25, 25, 315]
-wall7 =  [997, 315, 153, 25]
-wall8 =  [997, 315, 25, 125]
-wall9 =  [1000, 415, 200, 25]
-wall10 = [0, 500, 200, 25]
-wall11 = [1000, 500, 200, 25]
-wall12 = [200, 500, 25, 125]
-wall13 = [50, 625, 175, 25]
-wall14 = [25, 625, 25, 250]
-wall15 = [50, 850, 1125, 25]
-wall16 = [1150, 625, 25, 225]
-wall17 = [1000, 625, 150, 25]
-wall18 = [1000, 500, 25, 125]
+wall1 = [0, 50, 1200, 25]  # y = 50
 
-wall19 = [100, 80, 100, 100]
-wall20 = [100, 225, 100, 50]
-wall21 = [250, 80, 200, 100]
+wall2 = [0, 75, 25, 200]  # y = 75
+wall3 = [575, 75, 50, 100]
+wall4 = [1175, 75, 25, 200]
 
-wall22 = [500, 50, 25, 130]
-wall23 = [250, 225, 25, 217]
-wall24 = [275, 321, 175, 25]
-wall25 = [350, 225, 350, 25]
-wall26 = [500, 250, 25, 100]
-wall27 = [575, 80, 300, 100]
-wall28 = [925, 80, 175, 100]
+wall5 = [50, 100, 225, 25]  # y = 100
+wall6 = [300, 100, 250, 25]
+wall7 = [650, 100, 250, 25]
+wall8 = [925, 100, 225, 25]
 
-wall29 = [925, 230, 175, 50]
+wall9 = [50, 125, 25, 50] # y = 125
+wall10 = [250, 125, 25, 50]
+wall11 = [300, 125, 25, 50]
+wall12 = [525, 125, 25, 50]
+wall13 = [650, 125, 25, 50]
+wall14 = [875, 125, 25, 50]
+wall15 = [925, 125, 25, 50]
+wall16 = [1125, 125, 25, 50]
 
-wall30 = [500, 500, 200, 25]
-wall31 = [500, 400, 25, 100]
-wall32 = [675, 400, 25, 100]
-wall33 = [593, 400, 25, 100]
+wall17 = [75, 150, 175, 25] # y = 150
+wall18 = [325, 150, 200, 25]
+wall19 = [675, 150, 200, 25]
+wall20 = [950, 150, 175, 25]
 
+wall21 = [50, 200, 225, 25]  # y = 200
+wall22 = [300, 200, 50, 175]
+wall23 = [375, 200, 450, 50]
+wall24 = [850, 200, 50, 175]
+wall25 = [925, 200, 225, 25]
+
+wall26 = [25, 250, 250, 25]  # y = 250
+wall27 = [575, 250, 75, 75]
+wall28 = [925, 250, 250, 25]
+
+wall29 = [250, 275, 25, 100]  # y = 275
+wall30 = [350, 275, 200, 50]
+wall31 = [675, 275, 175, 50]
+wall32 = [925, 275, 25, 100]
+
+wall33 = [0, 350, 250, 25]  # y = 350
+wall34 = [450, 350, 50, 125]
+wall35 = [500, 350, 50, 50]
+wall36 = [550, 350, 50, 125]
+wall37 = [625, 350, 50, 125]
+wall38 = [675, 425, 50, 50]
+wall39 = [725, 350, 50, 125]
+wall40 = [925, 350, 275, 25]
+
+wall41 = [0, 450, 275, 25]  # y = 450
+wall42 = [300, 450, 100, 25]
+wall43 = [825, 450, 75, 25]
+wall44 = [925, 450, 275, 25]
+
+wall45 = [250, 475, 25, 100]  # y = 475
+wall46 = [300, 475, 25, 100]
+wall47 = [375, 475, 25, 100]
+wall48 = [825, 475, 25, 100]
+wall49 = [875, 475, 25, 100]
+wall50 = [925, 475, 25, 100]
+
+wall51 = [450, 500, 325, 50]  # y = 500
+
+wall52 = [0, 550, 250, 25]  # y = 550
+wall53 = [325, 550, 50, 25]
+wall54 = [575, 550, 75, 125]
+wall55 = [850, 550, 25, 25]
+wall56 = [950, 550, 250, 25]
+
+wall57 = [0, 575, 25, 325]    #y = 575
+wall58 = [1175, 575, 25, 325]
+
+wall59 = [125, 625, 150, 25]  # y = 625
+wall060 = [300, 625, 200, 50]
+wall061 = [725, 625, 175, 50]
+wall062 = [925, 625, 150, 25]
+
+wall063 = [225, 650, 50, 100]  # y = 650
+wall064 = [925, 650, 50, 100]
+
+wall065 = [25, 700, 100, 50]   # y = 700
+wall066 = [475, 700, 275, 50]
+wall067 = [1075, 700, 100, 50]
+
+wall068 = [300, 725, 25, 75]  # y = 725
+wall069 = [875, 725, 25, 75]
+
+wall070 = [575, 750, 75, 75]  # y = 750
+
+wall071 = [125, 800, 375, 25]  # y = 800
+wall072 = [725, 800, 350, 25]
+
+wall073 = [0, 875, 1200, 25]  # y = 875
 
 
 #walls level 2
@@ -251,7 +306,16 @@ wall219 = [975, 225, 25, 25]
 
 
 
-walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24, wall25, wall26, wall27, wall28, wall29, wall30, wall31, wall32, wall33]
+walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9,
+             wall10, wall11, wall12, wall13, wall14, wall15, wall16, wall17,
+             wall18, wall19, wall20, wall21, wall22, wall23, wall24, wall25,
+             wall26, wall27, wall28, wall29, wall30, wall31, wall32, wall33,
+             wall34, wall35, wall36, wall37, wall38, wall39, wall40, wall41,
+             wall42, wall43, wall44, wall45, wall46, wall47, wall48, wall49,
+             wall50, wall51, wall52, wall53, wall54, wall55, wall56, wall57,
+             wall58, wall59, wall060, wall061, wall062, wall063, wall064,
+             wall065, wall066, wall067, wall068, wall069, wall070, wall071,
+             wall072, wall073]
 walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wall68,
              wall69, wall70, wall71, wall72, wall73, wall74, wall75, wall76,
              wall77, wall78, wall79, wall80, wall81, wall82, wall83, wall84,
@@ -467,6 +531,7 @@ coin208 = [850, 825, 25, 25]
 coin209 = [975, 825, 25, 25]
 coin210 = [1125, 825, 25, 25]
 
+# coins level 3
 
 coins_one = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10, coin11]
 coins_two = [coin70, coin71, coin72, coin73, coin74, coin75, coin76, coin77,
@@ -549,13 +614,15 @@ while not done:
                 elif player_vx < 0:
                     player[0] = w[0] + w[2]
 
-    elif stage == 2:
+    elif stage == 2 or stage == 3:
         for w in walls_two:
             if intersects.rect_rect(player, w):        
                 if player_vx > 0:
                     player[0] = w[0] - player[2]
                 elif player_vx < 0:
                     player[0] = w[0] + w[2]
+
+    
 
     ''' move the player in vertical direction '''
     player[1] += player_vy
@@ -569,7 +636,7 @@ while not done:
                 if player_vy < 0:
                     player[1] = w[1] + w[3]
 
-    elif stage == 2:
+    elif stage == 2 or stage == 3:
         for w in walls_two:
             if intersects.rect_rect(player, w):                    
                 if player_vy > 0:
@@ -612,7 +679,7 @@ while not done:
     ''' collisions with teleporters '''
     if stage == 2:
         if intersects.rect_rect(player, teleport2):
-            if player_vx > 0:
+            if player_vx < 0:
                 stage += 1
             
 
@@ -637,13 +704,13 @@ while not done:
 
     if stage == 0:
         
-        pygame.draw.rect(screen, NEON_BLUE, [100, 105, 1000, 700])
-        welcome = font2.render("WELCOME TO THE", 1, GREEN)
-        screen.blit(welcome, [270, 200])
-        maze = font3.render("MAZE", 1, GREEN)
-        screen.blit(maze, [450, 350])
-        space = font.render("HIT THE SPACE BAR TO START", 1, YELLOW)
-        screen.blit(space, [300, 600])
+        #pygame.draw.rect(screen, NEON_BLUE, [100, 105, 1000, 700])
+        screen.blit(img, [0, 0])
+        welcome = font2.render("WELCOME TO THE MAZE", 1, WHITE)
+        screen.blit(welcome, [150, 800])
+        
+        space = font.render("HIT THE SPACE BAR TO START", 1, GREEN)
+        screen.blit(space, [350, 860])
         
         
 
@@ -668,8 +735,16 @@ while not done:
         pygame.draw.rect(screen, GREEN, door2)
         pygame.draw.rect(screen, RED, teleport2)
 
-    '''
-    gray = (175, 175, 175)
+    elif stage == 3:
+        screen.fill(WHITE)
+        pygame.draw.rect(screen, BLACK, player)
+        for w in walls_two:
+            pygame.draw.rect(screen, NEON_BLUE, w)
+            
+    elif stage == 4:
+        screen.fill(WHITE)
+    
+    '''gray = (175, 175, 175)
     for y in range(0, HEIGHT, 25):
         pygame.draw.line(screen, gray, [0, y], [WIDTH, y])
         
