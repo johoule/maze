@@ -37,7 +37,7 @@ font3 = pygame.font.Font(None, 150)
 img = pygame.image.load('cornmaze.png')
 
 #set stage
-stage = 0
+stage = 2
 
 
 # Make a player
