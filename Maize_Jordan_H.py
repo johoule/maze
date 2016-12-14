@@ -40,7 +40,7 @@ img2 = pygame.image.load('fireworks.png')
 img3 = pygame.image.load('youtried.png')
 
 #set stage
-stage = 0
+stage = 1
 
 #time for stage 2
 seconds = 2 * 60
@@ -53,24 +53,34 @@ player_vx = 0
 player_vy = 0
 player_speed = 5
 
+player2 = [575, 400, 25, 25]
+player2_vx = 0
+player2_vy = 0
+player2_speed = 5
+
+player3 = [700, 400, 25, 25]
+player3_vx = 0
+player3_vy = 0
+player_speed = 5
+
 # make walls level 1
 wall1 = [0, 50, 1200, 25]  # y = 50
 
-wall2 = [0, 75, 25, 200]  # y = 75
+wall2 = [0, 75, 25, 250]  # y = 75
 wall3 = [575, 75, 50, 100]
-wall4 = [1175, 75, 25, 200]
+wall4 = [1175, 75, 25, 250]
 
 wall5 = [50, 100, 225, 25]  # y = 100
-wall6 = [300, 100, 250, 25]
-wall7 = [650, 100, 250, 25]
+wall6 = [325, 100, 225, 25]
+wall7 = [650, 100, 225, 25]
 wall8 = [925, 100, 225, 25]
 
 wall9 = [50, 125, 25, 50] # y = 125
 wall10 = [250, 125, 25, 50]
-wall11 = [300, 125, 25, 50]
+wall11 = [325, 125, 25, 50]
 wall12 = [525, 125, 25, 50]
 wall13 = [650, 125, 25, 50]
-wall14 = [875, 125, 25, 50]
+wall14 = [850, 125, 25, 50]
 wall15 = [925, 125, 25, 50]
 wall16 = [1125, 125, 25, 50]
 
@@ -80,68 +90,78 @@ wall19 = [675, 150, 200, 25]
 wall20 = [950, 150, 175, 25]
 
 wall21 = [50, 200, 225, 25]  # y = 200
-wall22 = [300, 200, 50, 175]
-wall23 = [375, 200, 450, 50]
-wall24 = [850, 200, 50, 175]
+wall22 = [325, 200, 25, 175]
+wall23 = [400, 200, 400, 25]
+wall24 = [850, 200, 25, 175]
 wall25 = [925, 200, 225, 25]
 
-wall26 = [25, 250, 250, 25]  # y = 250
-wall27 = [575, 250, 75, 75]
-wall28 = [925, 250, 250, 25]
+                            
+wall27 = [575, 225, 50, 75]  # y = 225
+wall074 = [50, 225, 25, 50]
+wall075 = [250, 225, 25, 50]
+wall076 = [925, 225, 25, 50]
+wall077 = [1125, 225, 25, 50]
 
-wall29 = [250, 275, 25, 100]  # y = 275
-wall30 = [350, 275, 200, 50]
+wall078 = [75, 250, 175, 25]  # y = 250
+wall079 = [950, 250, 175, 25]
+
+wall30 = [350, 275, 175, 50] # y = 275
 wall31 = [675, 275, 175, 50]
-wall32 = [925, 275, 25, 100]
+
+
+wall26 = [25, 300, 250, 25]  # y = 300
+wall28 = [925, 300, 250, 25]
+
+wall29 = [250, 325, 25, 50] # y = 325
+wall32 = [925, 325, 25, 50]
 
 wall33 = [0, 350, 250, 25]  # y = 350
-wall34 = [450, 350, 50, 125]
-wall35 = [500, 350, 50, 50]
-wall36 = [550, 350, 50, 125]
-wall37 = [625, 350, 50, 125]
-wall38 = [675, 425, 50, 50]
-wall39 = [725, 350, 50, 125]
+wall34 = [500, 425, 225, 25] #****
+wall35 = [475, 375, 25, 75]# 
+wall36 = [550, 375, 25, 50]#
+wall37 = [625, 375, 25, 50]#
+wall38 = [675, 450, 25, 25]## extra wall
+wall39 = [700, 375, 25, 50]
 wall40 = [925, 350, 275, 25]
 
 wall41 = [0, 450, 275, 25]  # y = 450
-wall42 = [300, 450, 100, 25]
-wall43 = [825, 450, 75, 25]
+wall42 = [325, 450, 100, 25]
+wall43 = [775, 450, 100, 25]
 wall44 = [925, 450, 275, 25]
 
-wall45 = [250, 475, 25, 100]  # y = 475
-wall46 = [300, 475, 25, 100]
-wall47 = [375, 475, 25, 100]
-wall48 = [825, 475, 25, 100]
-wall49 = [875, 475, 25, 100]
-wall50 = [925, 475, 25, 100]
+wall45 = [250, 475, 25, 50]  # y = 475
+wall46 = [325, 475, 25, 50]
+wall47 = [400, 475, 25, 50]
+wall48 = [775, 475, 25, 50]
+wall49 = [850, 475, 25, 50]
+wall50 = [925, 475, 25, 50]
 
-wall51 = [450, 500, 325, 50]  # y = 500
+wall51 = [475, 500, 250, 25]  # y = 500
 
-wall52 = [0, 550, 250, 25]  # y = 550
-wall53 = [325, 550, 50, 25]
-wall54 = [575, 550, 75, 125]
-wall55 = [850, 550, 25, 25]
-wall56 = [950, 550, 250, 25]
+wall52 = [0, 500, 250, 25]#  # y = 550
+wall53 = [350, 500, 50, 25]#
+wall54 = [575, 550, 75, 125]## extra wall
+wall55 = [800, 500, 50, 25]#
+wall56 = [950, 500, 250, 25]#
 
-wall57 = [0, 575, 25, 325]    #y = 575
-wall58 = [1175, 575, 25, 325]
+wall57 = [0, 525, 25, 350]#    #y = 575
+wall58 = [1175, 525, 25, 350]#
 
-wall59 = [125, 625, 150, 25]  # y = 625
-wall060 = [300, 625, 200, 50]
-wall061 = [725, 625, 175, 50]
-wall062 = [925, 625, 150, 25]
+wall59 = [50, 550, 225, 25]  # figure 1
+wall060 = [50, 575, 25, 50]
+wall061 = [250, 575, 25, 50]
+wall062 = [75, 600, 175, 25]
 
-wall063 = [225, 650, 50, 100]  # y = 650
-wall064 = [925, 650, 50, 100]
+wall063 = [25, 650, 150, 25]  # figure 2
+wall064 = [150, 675, 25, 75]
+wall065 = [25, 725, 125, 25]
 
-wall065 = [25, 700, 100, 50]   # y = 700
-wall066 = [475, 700, 275, 50]
-wall067 = [1075, 700, 100, 50]
+wall066 = [225, 650, 50, 100] # figure 3
 
-wall068 = [300, 725, 25, 75]  # y = 725
-wall069 = [875, 725, 25, 75]
-
-wall070 = [575, 750, 75, 75]  # y = 750
+wall067 = [50, 775, 225, 25] # figure 4
+wall068 = [50, 800, 25, 50]
+wall069 = [250, 800, 25, 50]
+wall070 = [75, 825, 175, 25]
 
 wall071 = [125, 800, 375, 25]  # y = 800
 wall072 = [725, 800, 350, 25]
@@ -322,7 +342,8 @@ walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9,
              wall50, wall51, wall52, wall53, wall54, wall55, wall56, wall57,
              wall58, wall59, wall060, wall061, wall062, wall063, wall064,
              wall065, wall066, wall067, wall068, wall069, wall070, wall071,
-             wall072, wall073]
+             wall072, wall073, wall074, wall075, wall076, wall077, wall078,
+             wall079]
 walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wall68,
              wall69, wall70, wall71, wall72, wall73, wall74, wall75, wall76,
              wall77, wall78, wall79, wall80, wall81, wall82, wall83, wall84,
@@ -593,6 +614,11 @@ while not done:
     left = pressed[pygame.K_LEFT]
     right = pressed[pygame.K_RIGHT]
 
+    a = pressed[pygame.K_a]
+    d = pressed[pygame.K_d]
+    w = pressed[pygame.K_w]
+    s = pressed[pygame.K_s]
+
     if up:
         player_vy = -player_speed
     elif down:
@@ -607,10 +633,26 @@ while not done:
     else:
         player_vx = 0
 
+    if a:
+        player2_vx = -player2_speed
+    elif d:
+        player2_vx = player2_speed
+    else:
+        player2_vx = 0
+
+    if w:
+        player2_vy = -player2_speed
+    elif s:
+        player2_vy = player2_speed
+    else:
+        player2_vy = 0
+    
+
         
     # Game logic (Check for collisions, update points, etc.)
     ''' move the player in horizontal direction '''
     player[0] += player_vx
+    player2[0] += player2_vx
 
     ''' resolve collisions horizontally '''
     if stage == 1:
@@ -620,6 +662,12 @@ while not done:
                     player[0] = w[0] - player[2]
                 elif player_vx < 0:
                     player[0] = w[0] + w[2]
+        for w in walls_one:
+            if intersects.rect_rect(player2, w):
+                if player2_vx > 0:
+                    player2[0] = w[0] - player2[2]
+                elif player2_vx < 0:
+                    player2[0] = w[0] + w[2]
 
     elif stage == 2 or stage == 3:
         for w in walls_two:
@@ -633,6 +681,7 @@ while not done:
 
     ''' move the player in vertical direction '''
     player[1] += player_vy
+    player2[1] += player2_vy
     
     ''' resolve collisions vertically '''
     if stage == 1:
@@ -642,6 +691,13 @@ while not done:
                     player[1] = w[1] - player[3]
                 if player_vy < 0:
                     player[1] = w[1] + w[3]
+        for w in walls_one:
+            if intersects.rect_rect(player2, w):
+                if player2_vy > 0:
+                    player2[1] = w[1] - player2[3]
+                elif player2_vy < 0:
+                    player2[1] = w[1] + w[3]
+                    
 
     elif stage == 2 or stage == 3:
         for w in walls_two:
@@ -657,6 +713,11 @@ while not done:
     BOTTOM = player[1] + player[3]
     LEFT = player[0]
     RIGHT = player[0] + player[2]
+
+    TOP2 = player2[1]
+    BOTTOM2 = player2[1] + player2[3]
+    LEFT2 = player2[0]
+    RIGHT2 = player2[0] + player2[2]
     
     if stage == 0 or stage == 1:
         if TOP < 0:
@@ -669,6 +730,11 @@ while not done:
         elif RIGHT > WIDTH:
             player[0] = 0
 
+        if LEFT2 < 0:
+            player2[0] = WIDTH - player2[2]
+        elif RIGHT2 > WIDTH:
+            player2[0] = 0
+
 
     ''' collisios with doors '''
     if stage == 1:
@@ -676,6 +742,10 @@ while not done:
             if intersects.rect_rect(player, door1):
                 if player_vy > 0:
                     player[1] = door1[1] - player[3]
+        if door_stage1 == True:
+            if intersects.rect_rect(player2, door1):
+                if player2_vy > 0:
+                    player2[1] = door[1] - player2[3]
     elif stage == 2:
         if door_stage2 == True:
             if intersects.rect_rect(player, door2):
@@ -738,6 +808,7 @@ while not done:
 
     elif stage == 1:
         pygame.draw.rect(screen, WHITE, player)
+        pygame.draw.rect(screen, NEON_BLUE, player2)
         
         screen.blit(level, [100, 5])
         #pygame.draw.rect(screen, GREEN, door1)
