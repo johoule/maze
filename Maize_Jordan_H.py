@@ -27,6 +27,11 @@ BLACK = (0, 0, 0)
 YELLOW = (255, 255, 0)
 GREEN = (0, 255, 0)
 NEON_BLUE = (2, 1, 253)
+AZTEC = (128, 252, 216)
+AZTEC2 = (107, 106, 111)
+AZTEC3 = (171, 175, 180)
+AZTEC4 = (58, 59, 61)
+AZTEC5 = (179, 206, 236)
 
 #font
 font = pygame.font.Font(None, 48)
@@ -38,6 +43,7 @@ font4 = pygame.font.Font(None, 35)
 img = pygame.image.load('cornmaze.png')
 img2 = pygame.image.load('fireworks.png')
 img3 = pygame.image.load('youtried.png')
+
 
 #set stage
 stage = 1
@@ -62,6 +68,11 @@ player3 = [700, 400, 25, 25]
 player3_vx = 0
 player3_vy = 0
 player_speed = 5
+
+
+# player score
+player1_score = 0
+player2_score = 0
 
 # make walls level 1
 wall1 = [0, 50, 1200, 25]  # y = 50
@@ -178,7 +189,42 @@ wall085 = [550, 600, 25, 75]
 wall086 = [625, 600, 25, 75]
 wall087 = [575, 650, 50, 25]
 
-wall088 = [450, 725, 300, 25]
+wall088 = [450, 725, 300, 25] # figure 9
+
+wall089 = [550, 775, 100, 25]  # figure 10
+wall090 = [550, 800, 25, 50]
+wall091 = [625, 800, 25, 50]
+wall092 = [575, 825, 50, 25]
+
+wall093 = [700, 575, 175, 25] # figure 11
+wall094 = [700, 600, 25, 75]
+wall095 = [850, 600, 25, 75]
+wall096 = [725, 650, 125, 25]
+
+wall097 = [775, 700, 100, 25] # figure 12
+
+wall098 = [700, 775, 175, 25] # figure 13
+wall099 = [700, 800, 25, 50]
+wall0100 = [850, 800, 25, 50]
+wall0101 = [725, 825, 125, 25]
+
+wall0102 = [925, 550, 225, 25] # figure 14
+wall0103 = [925, 575, 25, 50]
+wall0104 = [1125, 575, 25, 50]
+wall0105 = [950, 600, 175, 25]
+
+wall0106 = [925, 650, 50, 100] # figure 15
+
+wall0107 = [1025, 650, 150, 25] # figure 16
+wall0108 = [1025, 675, 25, 75]
+wall0109 = [1050, 725, 125, 25]
+
+wall0110 = [925, 775, 225, 25]  # figure 17
+wall0111 = [925, 800, 25, 50]
+wall0112 = [1125, 800, 25, 50]
+wall0113 = [950, 825, 175, 25]
+
+wall0114 = [0, 875, 1200, 25]
 
 
 #walls level 2
@@ -356,7 +402,11 @@ walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9,
              wall065, wall066, wall067, wall068, wall069, wall070, wall071,
              wall072, wall073, wall074, wall075, wall076, wall077, wall078,
              wall079, wall080, wall081, wall082, wall083, wall084, wall085,
-             wall086, wall087]
+             wall086, wall087, wall088, wall089, wall090, wall091, wall092,
+             wall093, wall094, wall095, wall096, wall097, wall098, wall099,
+             wall0100, wall0101, wall0102, wall0103, wall0104, wall0105,
+             wall0106, wall0107, wall0108, wall0109, wall0110, wall0111,
+             wall0112, wall0113, wall0114]
 walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wall68,
              wall69, wall70, wall71, wall72, wall73, wall74, wall75, wall76,
              wall77, wall78, wall79, wall80, wall81, wall82, wall83, wall84,
@@ -379,7 +429,8 @@ walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wal
              wall213, wall214, wall215, wall216, wall217, wall218, wall219]
 
 # doors
-door1 = [900, 800, 25, 300]
+door1_1 = [500, 375, 50, 25]
+door1_2 = [650, 375, 50, 25]
 
 door2 = [600, 475, 25, 25]
 
@@ -390,17 +441,97 @@ teleport2 = [575, 450, 25, 25]
 
 
 # Make coins level 1
-coin1 = [50, 50, 25, 25]
-coin2 = [300, 0, 25, 25]
-coin3 = [600, 0, 25, 25]
-coin4 = [900, 0, 25, 25]
-coin5 = [1175, 300, 25, 25]
-coin6 = [1175, 600, 25, 25]
-coin7 = [900, 875, 25, 25]
-coin8 = [600, 875, 25, 25]
-coin9 = [300, 875, 25, 25]
-coin10 = [0, 600, 25, 25]
-coin11 = [0, 300, 25, 25]
+coin1 = [25, 75, 25, 25]
+coin2 = [75, 75, 25, 25]
+coin3 = [125, 75, 25, 25]
+coin4 = [175, 75, 25, 25]
+coin5 = [225, 75, 25, 25]
+coin6 = [275, 75, 25, 25]
+coin7 = [325, 75, 25, 25]
+coin8 = [375, 75, 25, 25]
+coin9 = [425, 75, 25, 25]
+coin10 = [475, 75, 25, 25]
+coin11 = [525, 75, 25, 25]
+coin12 = [650, 75, 25, 25]
+coin13 = [700, 75, 25, 25]
+coin14 = [750, 75, 25, 25]
+coin15 = [800, 75, 25, 25]
+coin16 = [850, 75, 25, 25]
+coin17 = [900, 75, 25, 25]
+coin18 = [950, 75, 25, 25]
+coin19 = [1000, 75, 25, 25]
+coin20 = [1050, 75, 25, 25]
+coin21 = [1100, 75, 25, 25]
+coin22 = [1150, 75, 25, 25]
+
+coin23 = [25, 125, 25, 25]
+coin24 = [300, 100, 25, 25]
+coin25 = [300, 150, 25, 25]
+coin26 = [550, 100, 25, 25]
+coin27 = [550, 150, 25, 25]
+coin28 = [275, 125, 25, 25]
+coin29 = [625, 100, 25, 25]
+coin30 = [625, 150, 25, 25]
+coin31 = [875, 100, 25, 25]
+coin32 = [900, 125, 25, 25]
+coin33 = [875, 150, 25, 25]
+coin34 = [1150, 125, 25, 25]
+
+coin35 = [25, 175, 25, 25]
+coin36 = [75, 175, 25, 25]
+coin37 = [125, 175, 25, 25]
+coin38 = [175, 175, 25, 25]
+coin39 = [225, 175, 25, 25]
+coin40 = [275, 175, 25, 25]
+coin41 = [325, 175, 25, 25]
+coin42 = [375, 175, 25, 25]
+coin43 = [425, 175, 25, 25]
+coin44 = [475, 175, 25, 25]
+coin45 = [525, 175, 25, 25]
+coin46 = [575, 175, 25, 25]
+coin47 = [600, 175, 25, 25]
+coin48 = [650, 175, 25, 25]
+coin49 = [700, 175, 25, 25]
+coin50 = [750, 175, 25, 25]
+coin51 = [800, 175, 25, 25]
+coin52 = [850, 175, 25, 25]
+coin53 = [900, 175, 25, 25]
+coin54 = [950, 175, 25, 25]
+coin55 = [1000, 175, 25, 25]
+coin56 = [1050, 175, 25, 25]
+coin57 = [1100, 175, 25, 25]
+coin58 = [1150, 175, 25, 25]
+
+coin59 = [25, 225, 25, 25]
+coin60 = [275, 225, 25, 25]
+coin61 = [300, 200, 25, 25]
+coin62 = [300, 250, 25, 25]
+coin63 = [350, 200, 25, 25]
+coin64 = [350, 250, 25, 25]
+coin65 = [375, 225, 25, 25]
+coin66 = [400, 250, 25, 25]
+coin67 = [425, 225, 25, 25]
+coin68 = [450, 250, 25, 25]
+coin69 = [475, 225, 25, 25]
+coin070 = [500, 250, 25, 25]
+coin071 = [525, 225, 25, 25]
+coin072 = [550, 250, 25, 25]
+coin073 = [625, 250, 25, 25]
+coin074 = [650, 225, 25, 25]
+coin075 = [675, 250, 25, 25]
+coin076 = [700, 225, 25, 25]
+coin077 = [725, 250, 25, 25]
+coin078 = [750, 225, 25, 25]
+coin079 = [775, 250, 25, 25]
+coin080 = [800, 225, 25, 25]
+coin081 = [825, 200, 25, 25]
+coin082 = [825, 250, 25, 25]
+coin083 = [875, 200, 25, 25]
+coin084 = [875, 250, 25, 25]
+coin085 = [900, 225, 25, 25]
+coin086 = [1150, 225, 25, 25]
+
+
 
 # make coins level 2
 coin70 = [75, 50 ,25, 25]   #  y = 25
@@ -574,7 +705,17 @@ coin210 = [1125, 825, 25, 25]
 
 # coins level 3
 
-coins_one = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10, coin11]
+coins_one = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9,
+             coin10, coin11, coin12, coin13, coin14, coin15, coin16, coin17,
+             coin18, coin19, coin20, coin21, coin22, coin23, coin24, coin25,
+             coin26, coin27, coin28, coin29, coin30, coin31, coin32, coin33,
+             coin34, coin35, coin36, coin37, coin38, coin39, coin40, coin41,
+             coin42, coin43, coin44, coin45, coin46, coin47, coin48, coin49,
+             coin50, coin51, coin52, coin53, coin54, coin55, coin56, coin57,
+             coin58, coin59, coin60, coin61, coin62, coin63, coin64, coin65,
+             coin66, coin67, coin68, coin69, coin070, coin071, coin072, coin073,
+             coin074, coin075, coin076, coin077, coin078, coin079, coin080,
+             coin081, coin082, coin083, coin084, coin085, coin086]
 coins_two = [coin70, coin71, coin72, coin73, coin74, coin75, coin76, coin77,
              coin78, coin79, coin80, coin81, coin82, coin83, coin84, coin85,
              coin86, coin87, coin88, coin89, coin90, coin91, coin92, coin93,
@@ -752,13 +893,21 @@ while not done:
     ''' collisios with doors '''
     if stage == 1:
         if door_stage1 == True:
-            if intersects.rect_rect(player, door1):
+            if intersects.rect_rect(player, door1_1):
                 if player_vy > 0:
-                    player[1] = door1[1] - player[3]
+                    player[1] = door1_1[1] - player[3]
         if door_stage1 == True:
-            if intersects.rect_rect(player2, door1):
+            if intersects.rect_rect(player2, door1_1):
                 if player2_vy > 0:
-                    player2[1] = door1[1] - player2[3]
+                    player2[1] = door1_1[1] - player2[3]
+        if door_stage1 == True:
+            if intersects.rect_rect(player, door1_2):
+                if player_vy > 0:
+                    player[1] = door1_2[1] - player[3]
+        if door_stage1 == True:
+            if intersects.rect_rect(player2, door1_2):
+                if player2_vy > 0:
+                    player2[1] = door1_2[1] - player2[3]
     elif stage == 2:
         if door_stage2 == True:
             if intersects.rect_rect(player, door2):
@@ -772,11 +921,18 @@ while not done:
             if player_vx < 0:
                 stage += 1
             
-
-
+    '''count coins'''
+    if stage == 1:
+        for c in coins_one:
+            if intersects.rect_rect(player, c):
+                player1_score += 1
+            if intersects.rect_rect(player2, c):
+                player2_score += 1
+    
 
     ''' get the coins '''
     coins_one = [c for c in coins_one if not intersects.rect_rect(player, c)]
+    coins_one = [c for c in coins_one if not intersects.rect_rect(player2, c)]
     coins_two = [c for c in coins_two if not intersects.rect_rect(player, c)]
     if stage == 1:
         if len(coins_one) == 0:
@@ -820,16 +976,22 @@ while not done:
         
 
     elif stage == 1:
-        pygame.draw.rect(screen, WHITE, player)
-        pygame.draw.rect(screen, NEON_BLUE, player2)
-        
+        screen.fill(AZTEC)
+        pygame.draw.rect(screen, AZTEC2, player)
+        pygame.draw.rect(screen, AZTEC3, player2)
+        pygame.draw.rect(screen, AZTEC5, [0, 0, 1200, 50])
         screen.blit(level, [100, 5])
-        #pygame.draw.rect(screen, GREEN, door1)
+        score1 = font.render("Player 1 = " + str(player1_score), 1, WHITE)
+        screen.blit(score1, [500, 5])
+        score2 = font.render("Player 2 = " + str(player2_score), 1, WHITE)
+        screen.blit(score2, [900, 5])
+        pygame.draw.rect(screen, AZTEC5, door1_1)
+        pygame.draw.rect(screen, AZTEC5, door1_2)
         for w in walls_one:
-            pygame.draw.rect(screen, RED, w)
+            pygame.draw.rect(screen, AZTEC4, w)
 
         for c in coins_one:
-            pygame.draw.rect(screen, YELLOW, c)
+            pygame.draw.rect(screen, WHITE, c)
         
 
     elif stage == 2:
