@@ -120,7 +120,6 @@ wall34 = [500, 425, 225, 25] #****
 wall35 = [475, 375, 25, 75]# 
 wall36 = [550, 375, 25, 50]#
 wall37 = [625, 375, 25, 50]#
-wall38 = [675, 450, 25, 25]## extra wall
 wall39 = [700, 375, 25, 50]
 wall40 = [925, 350, 275, 25]
 
@@ -140,7 +139,6 @@ wall51 = [475, 500, 250, 25]  # y = 500
 
 wall52 = [0, 500, 250, 25]#  # y = 550
 wall53 = [350, 500, 50, 25]#
-wall54 = [575, 550, 75, 125]## extra wall
 wall55 = [800, 500, 50, 25]#
 wall56 = [950, 500, 250, 25]#
 
@@ -163,10 +161,24 @@ wall068 = [50, 800, 25, 50]
 wall069 = [250, 800, 25, 50]
 wall070 = [75, 825, 175, 25]
 
-wall071 = [125, 800, 375, 25]  # y = 800
-wall072 = [725, 800, 350, 25]
+wall071 = [325, 575, 175, 25]  # figure 5
+wall072 = [325, 600, 25, 75]
+wall073 = [475, 600, 25, 75]
+wall54 = [350, 650, 125, 25]
 
-wall073 = [0, 875, 1200, 25]  # y = 875
+wall38 = [325, 700, 100, 25]  # figure 6
+
+wall080 = [325, 775, 175, 25]  # figure 7
+wall081 = [325, 800, 25, 50]
+wall082 = [475, 800, 25, 50]
+wall083 = [350, 825, 125, 25]
+
+wall084 = [550, 575, 100, 25] # figure 8
+wall085 = [550, 600, 25, 75]
+wall086 = [625, 600, 25, 75]
+wall087 = [575, 650, 50, 25]
+
+wall088 = [450, 725, 300, 25]
 
 
 #walls level 2
@@ -343,7 +355,8 @@ walls_one = [wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9,
              wall58, wall59, wall060, wall061, wall062, wall063, wall064,
              wall065, wall066, wall067, wall068, wall069, wall070, wall071,
              wall072, wall073, wall074, wall075, wall076, wall077, wall078,
-             wall079]
+             wall079, wall080, wall081, wall082, wall083, wall084, wall085,
+             wall086, wall087]
 walls_two = [wall60, wall61, wall62, wall63, wall64, wall65, wall66, wall67, wall68,
              wall69, wall70, wall71, wall72, wall73, wall74, wall75, wall76,
              wall77, wall78, wall79, wall80, wall81, wall82, wall83, wall84,
@@ -745,7 +758,7 @@ while not done:
         if door_stage1 == True:
             if intersects.rect_rect(player2, door1):
                 if player2_vy > 0:
-                    player2[1] = door[1] - player2[3]
+                    player2[1] = door1[1] - player2[3]
     elif stage == 2:
         if door_stage2 == True:
             if intersects.rect_rect(player, door2):
