@@ -32,6 +32,7 @@ AZTEC2 = (107, 106, 111)
 AZTEC3 = (171, 175, 180)
 AZTEC4 = (58, 59, 61)
 AZTEC5 = (179, 206, 236)
+PURPLE = (95, 53, 115)
 
 #font
 font = pygame.font.Font(None, 48)
@@ -46,10 +47,10 @@ img3 = pygame.image.load('youtried.png')
 
 
 #set stage
-stage = 1
+stage = 0
 
 #time for stage 2
-seconds = 2 * 60
+seconds = 4 * 60
 ticks = 0
 
 
@@ -107,7 +108,7 @@ wall24 = [850, 200, 25, 175]
 wall25 = [925, 200, 225, 25]
 
                             
-wall27 = [575, 225, 50, 75]  # y = 225
+wall27 = [575, 225, 50, 100]  # y = 225
 wall074 = [50, 225, 25, 50]
 wall075 = [250, 225, 25, 50]
 wall076 = [925, 225, 25, 50]
@@ -436,6 +437,8 @@ door2 = [600, 475, 25, 25]
 
 
 #teleporters
+teleport1_1 = [525, 400, 25, 25]
+teleport1_2 = [650, 400, 25, 25]
 
 teleport2 = [575, 450, 25, 25]
 
@@ -530,6 +533,54 @@ coin083 = [875, 200, 25, 25]
 coin084 = [875, 250, 25, 25]
 coin085 = [900, 225, 25, 25]
 coin086 = [1150, 225, 25, 25]
+
+coin087 = [25, 275, 25, 25]
+coin088 = [75, 275, 25, 25]
+coin089 = [125, 275, 25, 25]
+coin090 = [175, 275, 25, 25]
+coin091 = [225, 275, 25, 25]
+coin092 = [275, 275, 25, 25]
+coin093 = [525, 275, 25, 25]
+coin094 = [650, 275, 25, 25]
+coin095 = [900, 275, 25, 25]
+coin096 = [950, 275, 25, 25]
+coin097 = [1000, 275, 25, 25]
+coin098 = [1050, 275, 25, 25]
+coin099 = [1100, 275, 25, 25]
+coin0100 = [1150, 275, 25, 25]
+
+coin0113 = [300, 300, 25, 25]
+coin0114 = [550, 300, 25, 25]
+coin0115 = [625, 300, 25, 25]
+coin0116 = [875, 300, 25, 25]
+
+coin0101 = [275, 325, 25, 25]
+coin0102 = [375, 325, 25, 25]
+coin0103 = [425, 325, 25, 25]
+coin0104 = [475, 325, 25, 25]
+coin0105 = [525, 325, 25, 25]
+coin0106 = [575, 325, 25, 25]
+coin0107 = [600, 325, 25, 25]
+coin0108 = [650, 325, 25, 25]
+coin0109 = [700, 325, 25, 25]
+coin0110 = [750, 325, 25, 25]
+coin0111 = [800, 325, 25, 25]
+coin0112 = [900, 325, 25, 25]
+
+coin0117 = [300, 350, 25, 25]
+coin0118 = [350, 350, 25, 25]
+coin0119 = [400, 350, 25, 25]
+coin0120 = [450, 350, 25, 25]
+coin0121 = [500, 350, 25, 25]
+coin0122 = [550, 350, 25, 25]
+coin0123 = [625, 350, 25, 25]
+coin0124 = [675, 350, 25, 25]
+coin0125 = [725, 350, 25, 25]
+coin0126 = [775, 350, 25, 25]
+coin0127 = [825, 350, 25, 25]
+coin0128 = [875, 350, 25, 25]
+
+
 
 
 
@@ -715,7 +766,14 @@ coins_one = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9,
              coin58, coin59, coin60, coin61, coin62, coin63, coin64, coin65,
              coin66, coin67, coin68, coin69, coin070, coin071, coin072, coin073,
              coin074, coin075, coin076, coin077, coin078, coin079, coin080,
-             coin081, coin082, coin083, coin084, coin085, coin086]
+             coin081, coin082, coin083, coin084, coin085, coin086, coin087,
+             coin088, coin089, coin090, coin091, coin092, coin093, coin094,
+             coin095, coin096, coin097, coin098, coin099, coin0100, coin0101,
+             coin0102, coin0103, coin0104, coin0105, coin0106, coin0107,
+             coin0108, coin0109, coin0110, coin0111, coin0112, coin0113,
+             coin0114, coin0115, coin0116, coin0117, coin0118, coin0119,
+             coin0120, coin0121, coin0122, coin0123, coin0124, coin0125,
+             coin0126, coin0127, coin0128]
 coins_two = [coin70, coin71, coin72, coin73, coin74, coin75, coin76, coin77,
              coin78, coin79, coin80, coin81, coin82, coin83, coin84, coin85,
              coin86, coin87, coin88, coin89, coin90, coin91, coin92, coin93,
@@ -916,10 +974,31 @@ while not done:
 
 
     ''' collisions with teleporters '''
+    if stage == 1:
+        if intersects.rect_rect(player, teleport1_1):
+            if player_vx < 0:
+                stage += 1
+                player[0] = 600
+                player[1] = 400
+        if intersects. rect_rect(player, teleport1_2):
+            if player_vx < 0:
+                stage += 1
+                player[0] = 600
+                player[1] = 400
+        if intersects.rect_rect(player2, teleport1_1):
+            if player2_vx < 0:
+                stage += 1
+                player[0] = 600
+                player[1] = 400
+        if intersects.rect_rect(player2, teleport1_2):
+            if player2_vx < 0:
+                stage += 1
+                player[0] = 600
+                player[1] = 400
     if stage == 2:
         if intersects.rect_rect(player, teleport2):
             if player_vx < 0:
-                stage += 1
+                stage = 5
             
     '''count coins'''
     if stage == 1:
@@ -933,7 +1012,8 @@ while not done:
     ''' get the coins '''
     coins_one = [c for c in coins_one if not intersects.rect_rect(player, c)]
     coins_one = [c for c in coins_one if not intersects.rect_rect(player2, c)]
-    coins_two = [c for c in coins_two if not intersects.rect_rect(player, c)]
+    if stage == 2:
+        coins_two = [c for c in coins_two if not intersects.rect_rect(player, c)]
     if stage == 1:
         if len(coins_one) == 0:
             door_stage1 = False
@@ -987,6 +1067,8 @@ while not done:
         screen.blit(score2, [900, 5])
         pygame.draw.rect(screen, AZTEC5, door1_1)
         pygame.draw.rect(screen, AZTEC5, door1_2)
+        pygame.draw.rect(screen, NEON_BLUE, teleport1_1)
+        pygame.draw.rect(screen, NEON_BLUE, teleport1_2)
         for w in walls_one:
             pygame.draw.rect(screen, AZTEC4, w)
 
@@ -995,12 +1077,13 @@ while not done:
         
 
     elif stage == 2:
+        
         time = font4.render("Time: " + str(m) + ":" + str(s), 1, WHITE)
         pygame.draw.rect(screen, WHITE, player)
         screen.blit(level2, [100, 0])
         screen.blit(time, [1000, 0])
         for w in walls_two:
-            pygame.draw.rect(screen, NEON_BLUE, w)
+            pygame.draw.rect(screen, PURPLE, w)
 
         for c in coins_two:
             pygame.draw.rect(screen, YELLOW, c)
