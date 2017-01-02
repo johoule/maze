@@ -47,7 +47,7 @@ img3 = pygame.image.load('youtried.png')
 
 
 #set stage
-stage = 0
+stage = 1
 
 #time for stage 2
 seconds = 4 * 60
@@ -794,6 +794,43 @@ coins_two = [coin70, coin71, coin72, coin73, coin74, coin75, coin76, coin77,
              coin193, coin194, coin195, coin196, coin197, coin198, coin199,
              coin200, coin201, coin202, coin203, coin204, coin205, coin206,
              coin207, coin208, coin209, coin210]
+
+#more coins for level 1
+for x in range(25, 250, 50):
+    c = [x, 375, 25, 25]
+    coins_one.append(c)
+
+for x in range(0, 275, 50):
+    c = [x, 425, 25, 25]
+    coins_one.append(c)
+
+for x in range(925, 1200, 50):
+    c = [x, 375, 25, 25]
+    coins_one.append(c)
+
+for x in range(950, 1175, 50):
+    c = [x, 425, 25, 25]
+    coins_one.append(c)
+
+for y in range(450, 825, 50):
+    c = [275, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(475, 850, 50):
+    c = [300, y, 25, 25]
+    coins_one.append(c)
+
+for x in range(25, 1150, 50):
+    c = [x, 850, 25, 25]
+    coins_one.append(c)
+
+for x in range(50, 275, 50):
+    c = [x, 525, 25, 25]
+    coins_one.append(c)
+
+for y in range(550, 625, 50):
+    c = [25, y, 25, 25]
+    coins_one.append(c)
 
 #levels
 level2 = False
