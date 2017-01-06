@@ -47,7 +47,7 @@ img3 = pygame.image.load('youtried.png')
 
 
 #set stage
-stage = 1
+stage = 0
 
 #time for stage 2
 seconds = 4 * 60
@@ -832,6 +832,126 @@ for y in range(550, 625, 50):
     c = [25, y, 25, 25]
     coins_one.append(c)
 
+for x in range(50, 275, 50):
+    c = [x, 625, 25, 25]
+    coins_one.append(c)
+
+for y in range(650, 775, 50):
+    c = [175, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(675, 750, 50):
+    c = [200, y, 25, 25]
+    coins_one.append(c)
+
+for x in range(25, 1150, 50):
+    c = [x, 750, 25, 25]
+    coins_one.append(c)
+
+for x in range(350, 1175, 50):
+    c = [x, 525, 25, 25]
+    coins_one.append(c)
+
+for x in range(325, 900, 50):
+    c = [x, 550, 25, 25]
+    coins_one.append(c)
+
+for y in range(775, 850, 50):
+    c = [500, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(800, 875, 50):
+    c = [525, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(775, 850, 50):
+    c = [650, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(800, 875, 50):
+    c = [675, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(450, 875, 50):
+    c = [875, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(475, 850, 50):
+    c = [900, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(525, 650, 50):
+    c = [1150, y, 25, 25]
+    coins_one.append(c)
+
+for x in range(950, 1125, 50):
+    c = [x, 625, 25, 25]
+    coins_one.append(c)
+
+for y in range(775, 850, 50):
+    c = [1150, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(650, 775, 50):
+    c = [975, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(675, 750, 50):
+    c = [1000, y, 25, 25]
+    coins_one.append(c)
+
+for x in range(450, 775, 50):
+    c = [x, 475, 25, 25]
+    coins_one.append(c)
+
+for y in range(450, 525, 50):
+    c = [425, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(450, 525, 50):
+    c = [725, y, 25, 25]
+    coins_one.append(c)
+
+for x in range(475, 750, 50):
+    c = [x, 450, 25, 25]
+    coins_one.append(c)
+
+for x in range(350, 875, 50):
+    c = [x, 675, 25, 25]
+    coins_one.append(c)
+
+for y in range(575, 650, 50):
+    c = [500, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(600, 675, 50):
+    c = [525, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(575, 650, 50):
+    c = [650, y, 25, 25]
+    coins_one.append(c)
+
+for y in range(600, 675, 50):
+    c = [675, y, 25, 25]
+    coins_one.append(c)
+
+for x in range(425, 750, 50):
+    c = [x, 700, 25, 25]
+    coins_one.append(c)
+
+for x in range(350, 425, 50):
+    c = [x, 725, 25, 25]
+    coins_one.append(c)
+
+for x in range(750, 875, 50):
+    c = [x, 725, 25, 25]
+    coins_one.append(c)
+
+for y in range(750, 875, 50):
+    c = [25, y, 25, 25]
+    coins_one.append(c)
+    
 #levels
 level2 = False
 level3 = False
